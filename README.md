@@ -1,70 +1,80 @@
-📚 Library Management System
-🌟 Overview
+# 📚 Library Management System
 
-This project is a simple Library Management System implemented in Dart. It allows library administrators to manage books and users, and provides basic functionalities like borrowing and returning books. The project is designed for demonstration and learning purposes.
-✨ Features
+## 🌟 Overview
+This project is a simple **Library Management System** implemented in Dart. It allows library administrators to manage books and users, and provides basic functionalities like borrowing and returning books. The project is designed for demonstration and learning purposes.
 
-    📖 Manage Books
+## ✨ Features
+1. **📖 Manage Books**
+   - ➕ Add new books to the library.
+   - 📋 Display book details, including their borrowing status.
 
-        ➕ Add new books to the library.
+2. **👤 Manage Users**
+   - ➕ Add new users to the library system.
+   - 📋 Display user information.
 
-        📋 Display book details, including their borrowing status.
+3. **🔄 Borrow and Return Books**
+   - 📥 Borrow a book by providing its ID and the user's ID.
+   - 📤 Return a borrowed book by providing its ID.
 
-    👤 Manage Users
+4. **⚠️ Error Handling**
+   - Provides user-friendly messages for invalid operations, such as borrowing a book that is already borrowed or returning a book that was not borrowed.
 
-        ➕ Add new users to the library system.
+## 🏗️ Code Structure
+### 📂 Classes
+- **📘 Book**: Represents a book in the library with properties like ID, title, and borrowing status.
+- **👤 User**: Represents a library user with properties like ID and name.
+- **🏢 Library**: Manages the list of books and users and provides methods for library operations.
 
-        📋 Display user information.
+### 🔑 Key Methods
+- **addBook(id, title)**: ➕ Adds a book to the library.
+- **addUser(id, name)**: ➕ Adds a user to the library system.
+- **borrowBook(bookId, userId)**: 📥 Marks a book as borrowed by a user.
+- **returnBook(bookId)**: 📤 Marks a book as returned.
+- **displayLibraryInfo()**: 📋 Displays the current state of the library.
 
-    🔄 Borrow and Return Books
+## 🛠️ Example Usage
+Below is an example demonstrating how to use the library system:
 
-        📥 Borrow a book by providing its ID and the user's ID.
+```dart
+void main() {
+  Library library = Library();
 
-        📤 Return a borrowed book by providing its ID.
+  // Add books
+  library.addBook(1, 'Crime and Punishment');
+  library.addBook(2, 'The Idiot');
+  library.addBook(3, 'The Brothers Karamazov');
 
-    ⚠️ Error Handling
+  // Add users
+  library.addUser(1, 'Saadany');
+  library.addUser(2, 'Shrouk');
 
-        Provides user-friendly messages for invalid operations, such as borrowing a book that is already borrowed or returning a book that was not borrowed.
+  // Borrow books
+  library.borrowBook(1, 1); // Saadany borrows Crime and Punishment
+  library.borrowBook(2, 2); // Shrouk borrows The Idiot
 
-🏗️ Code Structure
-📂 Classes
+  // Attempt to borrow already borrowed book
+  library.borrowBook(2, 1); // Error
 
-    📘 Book: Represents a book in the library with properties like ID, title, and borrowing status.
+  // Return books
+  library.returnBook(1); // Saadany returns Crime and Punishment
+  library.returnBook(1); // Error: book already returned
 
-    👤 User: Represents a library user with properties like ID and name.
+  // Display library state
+  library.displayLibraryInfo();
+}
+```
 
-    🏢 Library: Manages the list of books and users and provides methods for library operations.
+## 🚀 How to Run
+1. 🖥️ Install Dart SDK from [dart.dev](https://dart.dev/get-dart).
+2. 📂 Copy the code into a `.dart` file, e.g., `library_management.dart`.
+3. 💻 Open a terminal and navigate to the directory containing the file.
+4. ▶️ Run the program using the command:
+   ```
+   dart library_management.dart
+   ```
 
-🔑 Key Methods
-
-    addBook(id, title): ➕ Adds a book to the library.
-
-    addUser(id, name): ➕ Adds a user to the library system.
-
-    borrowBook(bookId, userId): 📥 Marks a book as borrowed by a user.
-
-    returnBook(bookId): 📤 Marks a book as returned.
-
-    displayLibraryInfo(): 📋 Displays the current state of the library.
-
-
-🚀 How to Run
-
-    🖥️ Install Dart SDK from dart.dev.
-
-    📂 Copy the code into a .dart file, e.g., library_management.dart.
-
-    💻 Open a terminal and navigate to the directory containing the file.
-
-    ▶️ Run the program using the command:
-    dart library_management.dart
-
-🔮 Future Enhancements
-
-    🗑️ Support for removing books and users.
-
-    💾 Adding a database or file storage for persistence.
-
-    🖌️ Enhancing the user interface with a frontend or command-line menu system.
-
+## 🔮 Future Enhancements
+- 🗑️ Support for removing books and users.
+- 💾 Adding a database or file storage for persistence.
+- 🖌️ Enhancing the user interface with a frontend or command-line menu system.
 
