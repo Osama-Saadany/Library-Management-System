@@ -1,9 +1,7 @@
 # 📚 Library Management System 📚
-
 Welcome to the **Library Management System** built with Dart! This simple application helps manage books, users, and book borrowing/returning operations in a library setting. 🚀
 
 ## 🌟 Features
-
 - 📖 Add new books and users to the system.
 - 📥 Borrow and 📤 Return books.
 - 🏛 Display current library status with the list of books and users.
@@ -14,22 +12,19 @@ Welcome to the **Library Management System** built with Dart! This simple applic
 ## 📝 Classes
 
 ### 📖 `Book`
-
 Represents a book in the library with the following properties and methods:
-
 - **Properties**:
   - `id` (int): Unique identifier for the book.
   - `title` (String): Title of the book.
   - `borrowed` (bool): Tracks whether the book is borrowed or not.
-
 - **Methods**:
   - `displayInfo()`: Prints the book's information including `id`, `title`, and `borrowed` status.
 
 #### Example:
-
 ```dart
 Book book = Book(id: 1, title: 'Crime and Punishment');
 book.displayInfo();
+
 
 👤 User
 
@@ -38,7 +33,6 @@ Represents a user of the library with the following properties and methods:
     Properties:
         id (int): Unique identifier for the user.
         name (String): Name of the user.
-
     Methods:
         displayInfo(): Prints the user's information including id and name.
 
@@ -74,13 +68,13 @@ The system handles several types of errors:
 
 library.borrowBook(2, 1);  // Error: Book "The Idiot" is already borrowed
 
-Trying to return a book that was not borrowed:
+    Trying to return a book that was not borrowed:
 
 library.returnBook(1);  // Error: Book "Crime and Punishment" is not currently borrowed
 
-Trying to borrow or return a book that doesn't exist:
+    Trying to borrow or return a book that doesn't exist:
 
-    library.returnBook(12);  // Error: Book with ID 12 not found.
+library.returnBook(12);  // Error: Book with ID 12 not found.
 
 📊 Example Output
 
@@ -96,12 +90,14 @@ Book "Crime and Punishment" has been returned.
 Book "Crime and Punishment" is not currently borrowed.
 Book with ID 12 not found.
 
---- Library Books ---
+--- 
+Library Books ---
 ID: 1, Title: Crime and Punishment, Borrowed: false
 ID: 2, Title: The Idiot, Borrowed: true
 ID: 3, Title: The Brothers Karamazov, Borrowed: false
 
---- Library Users ---
+--- 
+Library Users ---
 ID: 1, Name: Saadany
 ID: 2, Name: Shrouk
 
@@ -111,15 +107,6 @@ ID: 2, Name: Shrouk
 
 git clone <repository_url>
 
-Run the Dart application:
+    Run the Dart application:
 
-    dart run main.dart
-
-📝 License
-
-This project is open source and available under the MIT License.
-
-✨ Enjoy managing your library! ✨
-
-
-This version includes emojis to make the document more engaging and visually appealing
+dart run main.dart
