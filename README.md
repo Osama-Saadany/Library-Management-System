@@ -63,21 +63,7 @@ void main() {
   library.displayLibraryInfo();
 }
 ```
-
-## How to Run
-1. Install Dart SDK from [dart.dev](https://dart.dev/get-dart).
-2. Copy the code into a `.dart` file, e.g., `library_management.dart`.
-3. Open a terminal and navigate to the directory containing the file.
-4. Run the program using the command:
-   ```
-   dart library_management.dart
-   ```
-
 ## Future Enhancements
 - Support for removing books and users.
 - Adding a database or file storage for persistence.
 - Enhancing the user interface with a frontend or command-line menu system.
-
-## License
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
-
