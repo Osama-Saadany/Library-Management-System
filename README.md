@@ -47,35 +47,7 @@ This project is a simple Library Management System implemented in Dart. It allow
 
     displayLibraryInfo(): 📋 Displays the current state of the library.
 
-🛠️ Example Usage
 
-Below is an example demonstrating how to use the library system:
-void main() {
-  Library library = Library();
-
-  // Add books
-  library.addBook(1, 'Crime and Punishment');
-  library.addBook(2, 'The Idiot');
-  library.addBook(3, 'The Brothers Karamazov');
-
-  // Add users
-  library.addUser(1, 'Saadany');
-  library.addUser(2, 'Shrouk');
-
-  // Borrow books
-  library.borrowBook(1, 1); // Saadany borrows Crime and Punishment
-  library.borrowBook(2, 2); // Shrouk borrows The Idiot
-
-  // Attempt to borrow already borrowed book
-  library.borrowBook(2, 1); // Error
-
-  // Return books
-  library.returnBook(1); // Saadany returns Crime and Punishment
-  library.returnBook(1); // Error: book already returned
-
-  // Display library state
-  library.displayLibraryInfo();
-}
 🚀 How to Run
 
     🖥️ Install Dart SDK from dart.dev.
@@ -94,9 +66,5 @@ void main() {
     💾 Adding a database or file storage for persistence.
 
     🖌️ Enhancing the user interface with a frontend or command-line menu system.
-
-📜 License
-
-This project is licensed under the MIT License. Feel free to use and modify it as needed.
 
 
