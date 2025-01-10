@@ -1,112 +1,102 @@
-# 📚 Library Management System 📚
-Welcome to the **Library Management System** built with Dart! This simple application helps manage books, users, and book borrowing/returning operations in a library setting. 🚀
+📚 Library Management System
+🌟 Overview
 
-## 🌟 Features
-- 📖 Add new books and users to the system.
-- 📥 Borrow and 📤 Return books.
-- 🏛 Display current library status with the list of books and users.
-- ⚠️ Handle errors such as trying to borrow a book that's already borrowed or trying to return a book that is not borrowed.
+This project is a simple Library Management System implemented in Dart. It allows library administrators to manage books and users, and provides basic functionalities like borrowing and returning books. The project is designed for demonstration and learning purposes.
+✨ Features
 
----
+    📖 Manage Books
 
-## 📝 Classes
+        ➕ Add new books to the library.
 
-### 📖 `Book`
-Represents a book in the library with the following properties and methods:
-- **Properties**:
-  - `id` (int): Unique identifier for the book.
-  - `title` (String): Title of the book.
-  - `borrowed` (bool): Tracks whether the book is borrowed or not.
-- **Methods**:
-  - `displayInfo()`: Prints the book's information including `id`, `title`, and `borrowed` status.
+        📋 Display book details, including their borrowing status.
 
-#### Example:
-```dart
-Book book = Book(id: 1, title: 'Crime and Punishment');
-book.displayInfo();
+    👤 Manage Users
 
+        ➕ Add new users to the library system.
 
-👤 User
+        📋 Display user information.
 
-Represents a user of the library with the following properties and methods:
+    🔄 Borrow and Return Books
 
-    Properties:
-        id (int): Unique identifier for the user.
-        name (String): Name of the user.
-    Methods:
-        displayInfo(): Prints the user's information including id and name.
+        📥 Borrow a book by providing its ID and the user's ID.
 
-Example:
+        📤 Return a borrowed book by providing its ID.
 
-User user = User(id: 1, name: 'Saadany');
-user.displayInfo();
+    ⚠️ Error Handling
 
-🏛 Library
+        Provides user-friendly messages for invalid operations, such as borrowing a book that is already borrowed or returning a book that was not borrowed.
 
-Represents the library system that contains a list of books and users. Provides the following methods:
+🏗️ Code Structure
+📂 Classes
 
-    Methods:
-        addBook(int id, String title): Adds a new book to the library.
-        addUser(int id, String name): Adds a new user to the library system.
-        borrowBook(int bookId, int userId): Allows a user to borrow a book if it is available.
-        returnBook(int bookId): Allows a user to return a borrowed book.
-        displayLibraryInfo(): Displays all the books and users currently in the system.
+    📘 Book: Represents a book in the library with properties like ID, title, and borrowing status.
 
-Example:
+    👤 User: Represents a library user with properties like ID and name.
 
-Library library = Library();
-library.addBook(1, 'Crime and Punishment');
-library.addUser(1, 'Saadany');
-library.borrowBook(1, 1);  // Saadany borrows Crime and Punishment
-library.displayLibraryInfo();
+    🏢 Library: Manages the list of books and users and provides methods for library operations.
 
-⚠️ Error Handling
+🔑 Key Methods
 
-The system handles several types of errors:
+    addBook(id, title): ➕ Adds a book to the library.
 
-    Trying to borrow a book that's already borrowed:
+    addUser(id, name): ➕ Adds a user to the library system.
 
-library.borrowBook(2, 1);  // Error: Book "The Idiot" is already borrowed
+    borrowBook(bookId, userId): 📥 Marks a book as borrowed by a user.
 
-    Trying to return a book that was not borrowed:
+    returnBook(bookId): 📤 Marks a book as returned.
 
-library.returnBook(1);  // Error: Book "Crime and Punishment" is not currently borrowed
+    displayLibraryInfo(): 📋 Displays the current state of the library.
 
-    Trying to borrow or return a book that doesn't exist:
+🛠️ Example Usage
 
-library.returnBook(12);  // Error: Book with ID 12 not found.
+Below is an example demonstrating how to use the library system:
+void main() {
+  Library library = Library();
 
-📊 Example Output
+  // Add books
+  library.addBook(1, 'Crime and Punishment');
+  library.addBook(2, 'The Idiot');
+  library.addBook(3, 'The Brothers Karamazov');
 
-Book "Crime and Punishment" added to the library.
-Book "The Idiot" added to the library.
-Book "The Brothers Karamazov" added to the library.
-User "Saadany" added to the library system.
-User "Shrouk" added to the library system.
-Book "Crime and Punishment" borrowed by user ID 1.
-Book "The Idiot" borrowed by user ID 2.
-Book "The Idiot" is already borrowed.
-Book "Crime and Punishment" has been returned.
-Book "Crime and Punishment" is not currently borrowed.
-Book with ID 12 not found.
+  // Add users
+  library.addUser(1, 'Saadany');
+  library.addUser(2, 'Shrouk');
 
---- 
-Library Books ---
-ID: 1, Title: Crime and Punishment, Borrowed: false
-ID: 2, Title: The Idiot, Borrowed: true
-ID: 3, Title: The Brothers Karamazov, Borrowed: false
+  // Borrow books
+  library.borrowBook(1, 1); // Saadany borrows Crime and Punishment
+  library.borrowBook(2, 2); // Shrouk borrows The Idiot
 
---- 
-Library Users ---
-ID: 1, Name: Saadany
-ID: 2, Name: Shrouk
+  // Attempt to borrow already borrowed book
+  library.borrowBook(2, 1); // Error
 
+  // Return books
+  library.returnBook(1); // Saadany returns Crime and Punishment
+  library.returnBook(1); // Error: book already returned
+
+  // Display library state
+  library.displayLibraryInfo();
+}
 🚀 How to Run
 
-    Clone the repository:
+    🖥️ Install Dart SDK from dart.dev.
 
-git clone <repository_url>
+    📂 Copy the code into a .dart file, e.g., library_management.dart.
 
-    Run the Dart application:
+    💻 Open a terminal and navigate to the directory containing the file.
 
-dart run main.dart
+    ▶️ Run the program using the command:
+    dart library_management.dart
+
+🔮 Future Enhancements
+
+    🗑️ Support for removing books and users.
+
+    💾 Adding a database or file storage for persistence.
+
+    🖌️ Enhancing the user interface with a frontend or command-line menu system.
+
+📜 License
+
+This project is licensed under the MIT License. Feel free to use and modify it as needed.
+
+
